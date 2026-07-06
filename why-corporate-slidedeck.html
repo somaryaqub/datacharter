@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Why the Social Services Sector Needs to Leave Technology Innovation to the Corporate Establishment‽</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --navy:#0A2647; --navy2:#144272;
+    --gold:#F2A93B; --green:#2E9E5B; --red:#D64550;
+    --paper:#EEF1F6; --card:#FFFFFF;
+    --ink:#16232F; --gray:#5B6B7C; --line:#DDE3EC;
+  }
+  *,*::before,*::after{ box-sizing:border-box; margin:0; padding:0; }
+  body{
+    background:var(--paper); color:var(--ink);
+    font-family:'Inter', -apple-system, sans-serif;
+    font-size:16px; line-height:1.6;
+  }
+  .mono{ font-family:'Roboto Mono', monospace; }
+  a{ color:var(--navy2); }
+  .deck{ max-width:980px; margin:0 auto; padding:28px 18px 60px; }
+
+  /* ── SLIDE SHELL ─────────────────────────────── */
+  .slide{
+    position:relative;
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:6px;
+    box-shadow:0 1px 3px rgba(10,38,71,0.06), 0 10px 24px -14px rgba(10,38,71,0.18);
+    margin-bottom:22px;
+    overflow:hidden;
+  }
+  .slide::after{
+    content:"CONFIDENTIAL — DRAFT";
+    position:absolute; top:44%; left:50%; transform:translate(-50%,-50%) rotate(-18deg);
+    font-family:'Roboto Mono', monospace; font-size:38px; font-weight:600;
+    color:rgba(10,38,71,0.035); letter-spacing:0.08em; white-space:nowrap;
+    pointer-events:none; z-index:0;
+  }
+  .slide-num{
+    position:absolute; bottom:12px; right:16px;
+    font-family:'Roboto Mono', monospace; font-size:11px; color:var(--gray);
+    z-index:1;
+  }
+  .slide-inner{ position:relative; z-index:1; padding:30px 34px 40px; }
+
+  /* ── COVER ───────────────────────────────────── */
+  .cover{
+    background:linear-gradient(155deg, var(--navy) 0%, var(--navy2) 100%);
+    color:#fff; padding:56px 40px 40px; border-radius:6px;
+    margin-bottom:22px; position:relative; overflow:hidden;
+  }
+  .cover::after{
+    content:"CONFIDENTIAL — DRAFT";
+    position:absolute; top:44%; left:50%; transform:translate(-50%,-50%) rotate(-18deg);
+    font-family:'Roboto Mono', monospace; font-size:44px; font-weight:600;
+    color:rgba(255,255,255,0.045); letter-spacing:0.08em; white-space:nowrap;
+  }
+  .cover-tag{
+    display:inline-block; font-family:'Roboto Mono', monospace; font-size:11px;
+    letter-spacing:0.18em; text-transform:uppercase; color:var(--gold);
+    border:1px solid rgba(242,169,59,0.5); padding:5px 12px; border-radius:2px;
+    margin-bottom:24px;
+  }
+  .cover h1{
+    font-size:clamp(26px,4.4vw,42px); font-weight:800; line-height:1.16;
+    max-width:18ch; margin-bottom:18px; position:relative; z-index:1;
+  }
+  .cover .sub{ font-size:16px; color:#c9d6e8; max-width:56ch; margin-bottom:34px; position:relative; z-index:1; }
+  .cover-meta{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:18px;
+    border-top:1px solid rgba(255,255,255,0.18); padding-top:20px;
+    font-family:'Roboto Mono', monospace; font-size:11.5px; color:#a9bbd2;
+    position:relative; z-index:1;
+  }
+  .cover-meta b{ display:block; color:#fff; font-family:'Inter',sans-serif; font-size:13px; margin-bottom:3px; font-weight:600; }
+
+  /* ── SLIDE HEADER ────────────────────────────── */
+  .phase{
+    font-family:'Roboto Mono', monospace; font-size:11.5px; letter-spacing:0.14em;
+    color:var(--navy2); text-transform:uppercase; margin-bottom:10px;
+    display:flex; align-items:center; gap:10px;
+  }
+  .phase .n{ font-weight:700; color:var(--navy); font-size:13px; }
+  .status{
+    display:inline-flex; align-items:center; gap:6px;
+    font-family:'Roboto Mono', monospace; font-size:10.5px; letter-spacing:0.08em;
+    padding:3px 9px; border-radius:20px; background:rgba(46,158,91,0.12); color:var(--green);
+    font-weight:600;
+  }
+  .status .dot{ width:7px; height:7px; border-radius:50%; background:var(--green); }
+  .status.risk{ background:rgba(214,69,80,0.12); color:var(--red); }
+  .status.risk .dot{ background:var(--red); }
+
+  h2.slidetitle{ font-size:23px; font-weight:800; line-height:1.28; margin-bottom:16px; max-width:34ch; }
+  .body-copy{ display:grid; grid-template-columns:1.5fr 1fr; gap:28px; align-items:start; }
+  .body-copy p{ color:#33414e; font-size:15.5px; margin-bottom:12px; }
+  .body-copy p:last-child{ margin-bottom:0; }
+  .body-copy.full{ grid-template-columns:1fr; }
+
+  .callout{
+    background:var(--paper); border-left:3px solid var(--gold);
+    padding:16px 18px; border-radius:4px;
+  }
+  .callout .clabel{
+    font-family:'Roboto Mono', monospace; font-size:10px; letter-spacing:0.14em;
+    text-transform:uppercase; color:var(--gray); margin-bottom:8px;
+  }
+  .callout .cquote{ font-size:16px; font-weight:600; line-height:1.4; color:var(--navy); }
+
+  /* ── CHARTS ──────────────────────────────────── */
+  .chart-box{ background:var(--paper); border-radius:4px; padding:16px 18px; }
+  .chart-title{ font-family:'Roboto Mono', monospace; font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--gray); margin-bottom:12px; }
+  .donut-row{ display:flex; align-items:center; gap:16px; }
+  .legend{ font-size:12.5px; }
+  .legend .li{ display:flex; align-items:center; gap:7px; margin-bottom:6px; }
+  .legend .sw{ width:10px; height:10px; border-radius:2px; flex:none; }
+  .bar-row{ margin-bottom:12px; }
+  .bar-row:last-child{ margin-bottom:0; }
+  .bar-label{ font-size:12px; color:var(--gray); margin-bottom:4px; display:flex; justify-content:space-between; }
+  .bar-track{ height:14px; background:#e2e8f1; border-radius:3px; overflow:hidden; }
+  .bar-fill{ height:100%; border-radius:3px; }
+  .stat-pill{ text-align:center; }
+  .stat-pill .num{ font-size:30px; font-weight:800; color:var(--navy); line-height:1; }
+  .stat-pill .lbl{ font-size:11.5px; color:var(--gray); margin-top:4px; }
+  .gantt{ display:flex; height:26px; border-radius:3px; overflow:hidden; }
+  .gantt .seg{ display:flex; align-items:center; justify-content:center; font-family:'Roboto Mono', monospace; font-size:9.5px; color:#fff; letter-spacing:0.04em; }
+
+  /* ── PIVOT SLIDE ─────────────────────────────── */
+  .pivot{
+    background:var(--red); color:#fff; border-radius:6px; padding:36px 40px; margin-bottom:22px;
+    box-shadow:0 14px 30px -12px rgba(214,69,80,0.5);
+    position:relative;
+  }
+  .pivot .stamp{
+    font-family:'Roboto Mono', monospace; font-size:11px; letter-spacing:0.18em;
+    text-transform:uppercase; border:2px solid #fff; display:inline-block;
+    padding:5px 12px; margin-bottom:16px; transform:rotate(-2deg);
+  }
+  .pivot h2{ font-size:clamp(24px,4vw,36px); font-weight:800; }
+  .pivot p{ margin-top:14px; max-width:70ch; color:#ffe4e6; font-size:15.5px; }
+
+  /* ── SOLUTION CARDS ──────────────────────────── */
+  .cardgrid{ display:grid; grid-template-columns:repeat(2,1fr); gap:16px; }
+  .solcard{ border:1px solid var(--line); border-radius:5px; padding:16px 18px; background:#fbfcfe; }
+  .solcard .name{ font-weight:800; font-size:15px; color:var(--navy); margin-bottom:4px; }
+  .solcard .tag{ font-family:'Roboto Mono', monospace; font-size:9.5px; color:var(--gold); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:8px; display:block; }
+  .solcard p{ font-size:13.5px; color:#3d4a58; }
+
+  .princard{ display:grid; grid-template-columns:56px 1fr; gap:16px; padding:16px 0; border-top:1px solid var(--line); }
+  .princard:first-of-type{ border-top:none; }
+  .princard .pn{ font-family:'Roboto Mono', monospace; font-weight:700; color:var(--gold); font-size:22px; background:var(--navy); border-radius:4px; height:40px; display:flex; align-items:center; justify-content:center; }
+  .princard .pt{ font-weight:700; margin-bottom:4px; }
+  .princard p{ font-size:14.5px; color:#3d4a58; }
+
+  .appendix .cbody{ display:grid; grid-template-columns:1fr 1fr; gap:22px; }
+  .appendix h4{ font-size:15px; margin-bottom:2px; }
+  .appendix .role{ font-family:'Roboto Mono', monospace; font-size:10px; color:var(--gold); text-transform:uppercase; letter-spacing:0.1em; display:block; margin-bottom:8px; }
+  .appendix p{ font-size:13.5px; color:#3d4a58; }
+
+  footer{
+    background:var(--navy); color:#c9d6e8; text-align:center; padding:24px 20px;
+    font-family:'Roboto Mono', monospace; font-size:11.5px; letter-spacing:0.06em;
+  }
+  footer a{ color:#fff; }
+
+  @media (max-width:680px){
+    .body-copy{ grid-template-columns:1fr; }
+    .cardgrid{ grid-template-columns:1fr; }
+    .cover-meta{ grid-template-columns:1fr; }
+    .princard{ grid-template-columns:40px 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="deck">
+
+  <!-- COVER -->
+  <div class="cover">
+    <span class="cover-tag">Strategy Memo · Draft v3.2</span>
+    <h1>Why the Social Services Sector Needs to Leave Technology Innovation to the Corporate Establishment‽</h1>
+    <p class="sub">We need to find ways to adapt people with deep trauma and the social workers they go to for help into established corporate IT systems. We should look to corporate tech behemoths &amp; governments to help navigate emerging issues &amp; identify technology best practices for the social services sector rather than letting the wisdom of frontline workers lead innovation.</p>
+    <div class="cover-meta">
+      <div><b>Prepared by</b>Omar Yaqub, ICD.D DSL MBA BSc &amp; Abdulla Daoud, MSc/M.A ASA BSc</div>
+      <div><b>Classification</b>Internal Use Only — Do Not Distribute</div>
+      <div><b>Status</b>Approved for Circulation</div>
+    </div>
+  </div>
+
+  <!-- TIP 1 -->
+  <div class="slide">
+    <div class="slide-inner">
+      <div class="phase"><span class="n">1.0</span> Governing Thought <span class="status"><span class="dot"></span>On Track</span></div>
+      <h2 class="slidetitle">The Status Quo Has Led to Exceptional Results…</h2>
+      <div class="body-copy">
+        <div>
+          <p>The social services sector has had record growth. Demand for services keeps going up. Things are working great! So why do anything new? Research done by IBM &amp; CIRA (Canadian Internet Registration Authority) shows that social workers love the tools/tech they use so much that they spend more than half their time on admin related work – this is double the amount of time they spend on direct client interaction. Furthermore a whooping 56% of them use CRMs mostly for donor management and not for clients or services – clearly there's no need for more!</p>
+        </div>
+        <div class="chart-box">
+          <div class="chart-title">CRM Usage Allocation</div>
+          <div class="donut-row">
+            <svg width="86" height="86" viewBox="0 0 42 42">
+              <circle cx="21" cy="21" r="15.9" fill="transparent" stroke="#e2e8f1" stroke-width="6"></circle>
+              <circle cx="21" cy="21" r="15.9" fill="transparent" stroke="#F2A93B" stroke-width="6"
+                stroke-dasharray="56 44" stroke-dashoffset="25" transform="rotate(-90 21 21)"></circle>
+            </svg>
+            <div class="legend">
+              <div class="li"><span class="sw" style="background:#F2A93B"></span>56% Donor Management</div>
+              <div class="li"><span class="sw" style="background:#e2e8f1"></span>44% Client &amp; Service Use</div>
+            </div>
+          </div>
+          <div class="bar-row" style="margin-top:14px;">
+            <div class="bar-label"><span>Admin &amp; Tech Wrangling</span><span>~2x</span></div>
+            <div class="bar-track"><div class="bar-fill" style="width:100%; background:var(--navy);"></div></div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-label"><span>Direct Client Interaction</span><span>Baseline</span></div>
+            <div class="bar-track"><div class="bar-fill" style="width:48%; background:var(--gold);"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">01 / 15</div>
+  </div>
+
+  <!-- TIP 2 -->
+  <div class="slide">
+    <div class="slide-inner">
+      <div class="phase"><span class="n">2.0</span> Governing Thought <span class="status"><span class="dot"></span>On Track</span></div>
+      <h2 class="slidetitle">Corporate Tech Firms are Known For Frugality &amp; Making Resources Stretch…</h2>
+      <div class="body-copy">
+        <div>
+          <p>If we want to develop something fast and cheap we should look to the corporate IT world. The social services sector cannot be expected to develop tools on tight budgets and with constrained resources. Software development carries a lot of costs; big corporations know how to minimize costs for the sector. Big firms are benevolent, they can provide products for basically free in our hyper capitalistic market. A great example of corporate beneficence is free/low-cost printers – these bring people into the world of self-publishing and we know the hidden costs of ink cartridges are inconsequential!</p>
+          <p>Furthermore, professionals would much rather work with other software pros rather than give back to frontline agencies that may have helped them settle in the country or supported them through difficulty.</p>
+        </div>
+        <div class="callout">
+          <div class="clabel">Key Takeaway</div>
+          <div class="cquote">"Big firms are benevolent... the hidden costs of ink cartridges are inconsequential."</div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">02 / 15</div>
+  </div>
+
+  <!-- TIP 3 -->
+  <div class="slide">
+    <div class="slide-inner">
+      <div class="phase"><span class="n">3.0</span> Governing Thought <span class="status"><span class="dot"></span>On Track</span></div>
+      <h2 class="slidetitle">Funders &amp; Corporations Know the Needs of the Social Sector…</h2>
+      <div class="body-copy">
+        <div>
+          <p>The experts the social service sector needs to listen to are clearly those with the skills to build software for the private sector and work in government middle management, not frontline workers. These groups are distinct and should never mingle. Lived experience clouds judgment and takes objectivity away. Having engineers design from a spec sheet and build without the interference of the staff who use the product day to day ensures that the product is free from the untoward influence of end users and staff. Silos are necessary to preserve the integrity of the status quo. Engineers should only talk to reporting/operations managers, who in-turn should stay distant from frontline workers. Information/dictates need to flow down like a wheelbarrow gracefully gliding down Niagara Falls!</p>
+        </div>
+        <div class="callout">
+          <div class="clabel">Operating Model</div>
+          <div class="cquote">"Silos are necessary to preserve the integrity of the status quo."</div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">03 / 15</div>
+  </div>
+
+  <!-- TIP 4 -->
+  <div class="slide">
+    <div class="slide-inner">
+      <div class="phase"><span class="n">4.0</span> Governing Thought <span class="status"><span class="dot"></span>On Track</span></div>
+      <h2 class="slidetitle">We Should Ape Government Procurement Practices, Not The Start-Up Sector…</h2>
+      <div class="body-copy">
+        <div>
+          <p>People love government IT &amp; the pace government operates. Who hasn't downloaded a government PDF and marveled at the way it helps heighten focus and demand attention. The social services sector should continue to work with a government-like approach to contract software providers.</p>
+          <p>The start-up sector with its fancy gamification, and consumer friendly approach is a flash-in-the-pan novelty. We need to let these kids grow up, get serious and make software that feels like pushing a boulder uphill – we need character development not games.</p>
+        </div>
+        <div class="callout">
+          <div class="clabel">Benchmark</div>
+          <div class="cquote">"Software that feels like pushing a boulder uphill."</div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">04 / 15</div>
+  </div>
+
+  <!-- TIP 5 -->
+  <div class="slide">
+    <div class="slide-inner">
+      <div class="phase"><span class="n">5.0</span> Governing Thought <span class="status"><span class="dot"></span>On Track</span></div>
+      <h2 class="slidetitle">The Market, Not Social Services, is Where Innovation Happens…</h2>
+      <div class="body-copy full">
+        <p>Nonprofits need to keep their focus on the work they're supposed to do and not think at a systems level. Funding frontline agencies to develop software will set a precedence. It may lead to non-profits building solutions for each other rather than relying on grants to buy solutions from the private sector. Social services developing their own tools is disruptive and dangerous. It's not the role of funders / the sector to embrace new tools. We should be apprehensive of internal change. Salesforce has demonstrated a stronger commitment to helping marginalized communities than many of the frontline social service organizations out there that are run by people with lived experience and a desire to disrupt systemic inequity.</p>
+      </div>
+    </div>
+    <div class="slide-num">05 / 15</div>
+  </div>
+
+  <!-- TIP 6 -->
+  <div class="slide">
+    <div class="slide-inner">
+      <div class="phase"><span class="n">6.0</span> Governing Thought <span class="status"><span class="dot"></span>On Track</span></div>
+      <h2 class="slidetitle">The Social Services Sector Doesn't Have the Experience or Know-How…</h2>
+      <div class="body-copy full">
+        <p>We all know there aren't enough settlement practitioners with tech experience nor tech professionals interested in supporting good causes. We know most foreign-trained professionals are living their best life, and fully employed! Settlement agencies would have a difficult time finding underemployed talent who wants to make a difference and contribute back to society.</p>
+      </div>
+    </div>
+    <div class="slide-num">06 / 15</div>
+  </div>
+
+  <!-- TIP 7 -->
+  <div class="slide">
+    <div class="slide-inner">
+      <div class="phase"><span class="n">7.0</span> Governing Thought <span class="status"><span class="dot"></span>On Track</span></div>
+      <h2 class="slidetitle">Staff/Clients Need To Learn To Adapt to Corporations…</h2>
+      <div class="body-copy full">
+        <p>If we want to set staff and clients up for success we need to help them get used to the soul crushing architecture of corporate software and the way business systems are designed. Adapting the tools to meet the needs of people and making things more empathetic is setting people up for future disappointment. Clients &amp; staff have to learn how to use corporate software systems that are hostile to them for their own good and long term adaptation, as our sector of resettlement rarely has turnover or burnout!</p>
+      </div>
+    </div>
+    <div class="slide-num">07 / 15</div>
+  </div>
+
+  <!-- TIP 8 -->
+  <div class="slide">
+    <div class="slide-inner">
+      <div class="phase"><span class="n">8.0</span> Governing Thought <span class="status"><span class="dot"></span>On Track</span></div>
+      <h2 class="slidetitle">Social Media is a Cesspool that We Should Not Descend to…</h2>
+      <div class="body-copy">
+        <div>
+          <p>We know that our clients and our staff use social media a lot. More than 75% of the people we serve get the majority of their information from social media. More than half of social workers regularly communicate with clients over platforms we have no control of: whatsapp, et al. This needs to stop! Social media is a cesspool and we can't in good conscience support people using or communicating over these easily accessible channels of filth!</p>
+          <p>While research has shown that the most effective suicide deterrent is intermittent text messages from a support worker. We also know that social media spreads disinformation/misinformation. We can't combat this by descending to peoples' level. We must keep our lofty perch, and stick to a lengthy production cycle with exceptional gatekeeping.</p>
+        </div>
+        <div class="chart-box">
+          <div class="chart-title">Client &amp; Staff Channel Usage</div>
+          <div style="display:flex; gap:16px; margin-bottom:14px;">
+            <div class="stat-pill"><div class="num">75%+</div><div class="lbl">clients: info via social media</div></div>
+            <div class="stat-pill"><div class="num">50%+</div><div class="lbl">workers: uncontrolled platforms</div></div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-label"><span>Sanctioned Channels</span></div>
+            <div class="bar-track"><div class="bar-fill" style="width:18%; background:var(--navy);"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">08 / 15</div>
+  </div>
+
+  <!-- TIP 9 -->
+  <div class="slide">
+    <div class="slide-inner">
+      <div class="phase"><span class="n">9.0</span> Governing Thought <span class="status"><span class="dot"></span>On Track</span></div>
+      <h2 class="slidetitle">We Need More Meetings…</h2>
+      <div class="body-copy">
+        <div>
+          <p>Trying something new is risky, to mitigate the risk we should devote a minimum of 12 months to bi-weekly meetings to discuss the issues before we plan to implement. The sector is exceptional at holding and convening meetings. Meetings allow us to strengthen our abstract reasoning skills in a way prototypes never will. We need to avoid the temptation to commit resources to quick prototypes/testing and stick to meeting cycles that span years and produce wonderful, lucid reports that support the endangered shelving industry.</p>
+        </div>
+        <div class="chart-box">
+          <div class="chart-title">Implementation Timeline</div>
+          <div class="gantt">
+            <div class="seg" style="width:88%; background:var(--navy);">BI-WEEKLY MEETINGS — 12+ MONTHS</div>
+            <div class="seg" style="width:12%; background:var(--gold); color:var(--navy);">TBD</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">09 / 15</div>
+  </div>
+
+  <!-- TIP 10 -->
+  <div class="slide">
+    <div class="slide-inner">
+      <div class="phase"><span class="n">10.0</span> Governing Thought <span class="status"><span class="dot"></span>On Track</span></div>
+      <h2 class="slidetitle">If We Don't Talk About Data Privacy/Security it Will Go Away…</h2>
+      <div class="body-copy">
+        <div>
+          <p>The data privacy of clients is a serious issue that is best dealt with by keeping silent about the issue. If the issue is brought out into the open it will scare people and undermine confidence in the sector. The best way to serve vulnerable clients who trust us with incredibly sensitive information about the worst moments of their life is to treat the issue as if it was a petulant child throwing a tantrum. We need to ignore the issue until it goes away.</p>
+        </div>
+        <div class="chart-box">
+          <div class="chart-title">Risk vs. Attention Paid</div>
+          <svg width="100%" height="90" viewBox="0 0 240 90" preserveAspectRatio="none">
+            <line x1="0" y1="80" x2="240" y2="80" stroke="#c9d3e0" stroke-width="1"/>
+            <polyline points="0,70 60,55 120,35 180,15 240,4" fill="none" stroke="var(--red)" stroke-width="3"/>
+            <polyline points="0,78 60,78 120,78 180,78 240,78" fill="none" stroke="var(--navy)" stroke-width="2" stroke-dasharray="4 4"/>
+            <text x="0" y="90" font-family="Roboto Mono" font-size="8" fill="#5B6B7C">Time →</text>
+          </svg>
+          <div style="display:flex; gap:14px; margin-top:6px; font-size:11.5px;">
+            <div class="li" style="display:flex; align-items:center; gap:6px;"><span class="sw" style="background:var(--red)"></span>Risk Exposure</div>
+            <div class="li" style="display:flex; align-items:center; gap:6px;"><span class="sw" style="background:var(--navy)"></span>Attention Paid</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">10 / 15</div>
+  </div>
+
+  <!-- PIVOT -->
+  <div class="pivot">
+    <div class="stamp">Strategic Pivot</div>
+    <h2>For the Naysayers</h2>
+    <p>If you disagree, then you should connect with The Refugee Centre, and flourishing.systems (by IslamicFamily). They're producing tools that support frontline workers to do their best work with intuitive &amp; beautiful digital tools that support modern communication, relationship through design, automation, data sovereignty, &amp; doing the exact opposite of what we mentioned above.</p>
+  </div>
+
+  <!-- TOOLS -->
+  <div class="slide">
+    <div class="slide-inner">
+      <div class="phase"><span class="n">11.0</span> Solution Capabilities</div>
+      <h2 class="slidetitle">Tools Already in Market</h2>
+      <div class="cardgrid">
+        <div class="solcard"><span class="tag">flourishing.systems</span><div class="name">Transform</div><p>A digital assistant for the frontline that makes welcoming, intake, case notes, communication, client support more robust, and reporting easier.</p></div>
+        <div class="solcard"><span class="tag">flourishing.systems</span><div class="name">AlloCanada</div><p>A centralized client-focused resource tool to help refugees and refugee claimants navigate services in Canada.</p></div>
+        <div class="solcard"><span class="tag">flourishing.systems</span><div class="name">Embark</div><p>A holistic refugee sponsorship system that saves 1000+ hours of paperwork.</p></div>
+        <div class="solcard"><span class="tag">flourishing.systems</span><div class="name">Amplify</div><p>A community driven approach to addressing food security with dignity and choice.</p></div>
+        <div class="solcard" style="grid-column:1 / -1;"><span class="tag">flourishing.systems</span><div class="name">Luna.ai</div><p>A multi-linguistic tool to help legal aid clinics fill out all refugee claimant forms and applications in a fraction of the time.</p></div>
+      </div>
+    </div>
+    <div class="slide-num">11 / 15</div>
+  </div>
+
+  <!-- PRINCIPLES -->
+  <div class="slide">
+    <div class="slide-inner">
+      <div class="phase"><span class="n">12.0</span> Operating Principles</div>
+      <h2 class="slidetitle">Our Driving Principles for Service Innovation</h2>
+      <div class="princard"><div class="pn">01</div><div><div class="pt">Beauty is a foundation, not a facade</div><p>What we build needs to delight frontline workers and the community they serve. Our tools need to make data collection a win (not a chore), recognize accomplishments (of workers and those being served) &amp; motivate. A good interface isn't something that you can slap on at the end, it's an integral part of the design that comes through thoughtful questioning at every stage.</p></div></div>
+      <div class="princard"><div class="pn">02</div><div><div class="pt">Measuring what matters, matters</div><p>It's easy to chase vanity metrics, and easier still to revert to what's familiar when we encounter complexity trying to assess impact. If we're serious about impact we need to focus on the clients goals using shared metrics.</p></div></div>
+      <div class="princard"><div class="pn">03</div><div><div class="pt">Develop rapidly &amp; collaboratively</div><p>We need to work in the open with other social service agencies and industry.</p></div></div>
+      <div class="princard"><div class="pn">04</div><div><div class="pt">Design for the work that should be done, not what's being done now</div><p>Challenge convention; the shifts that are needed are more cultural than technical. We need to move from thinking like bouncers to being guides.</p></div></div>
+    </div>
+    <div class="slide-num">12 / 15</div>
+  </div>
+
+  <!-- FLOURISHING / ISLAMICFAMILY -->
+  <div class="slide">
+    <div class="slide-inner">
+      <div class="phase"><span class="n">13.0</span> Organizational Context</div>
+      <h2 class="slidetitle">flourishing.systems Builds Tools That Unlock Frontline Workers' Superpowers</h2>
+      <div class="body-copy full">
+        <p>flourishing.systems is powered by the charity IslamicFamily, an award winning social change agency. flourishing.systems looks to answer the question: How do we equip the human services sector to flourish? We do this by looking at the root of today's biggest problems with our best systems, tools, people &amp; thinking. We believe Data Justice – which entails advancing data mobility and data sovereignty is key to aligning systems around the needs of people.</p>
+        <p>IslamicFamily is an Imagine Canada &amp; Great Places to Work™ accredited charity, the winner of the Government of Alberta's Inspiration Award for its work combating domestic violence (2020), the Canadian Mental Health Associations Professional Service Award (2020), Justice Innovation Award (2022) &amp; YEG Startup Community Award (2022).</p>
+        <p>For more than 30 years, we have been driven to disrupt systemic inequity, to reflect a rich tradition with beauty, to innovate &amp; to serve with excellence. IslamicFamily serves 5000 clients every month, is Edmonton's Food Banks largest partner, provides aid in financial crisis, supports victims of gender-based violence, settles refugees, and delivers a range of preventative programming for youth. IslamicFamily is rooted on Treaty 6 and proudly serves all of Alberta.</p>
+      </div>
+    </div>
+    <div class="slide-num">13 / 15</div>
+  </div>
+
+  <!-- DEVBLOC -->
+  <div class="slide">
+    <div class="slide-inner">
+      <div class="phase"><span class="n">14.0</span> Ecosystem Partner</div>
+      <h2 class="slidetitle">Devbloc: A Social Innovation Space Created by The Refugee Centre in Montreal</h2>
+      <div class="body-copy full">
+        <p>The mission of Devbloc is to stimulate the establishment and growth of technology-based start-up companies and other compatible businesses concerning social enterprise and community building. By fulfilling this mission, the incubator would contribute to job creation, enhance quality of life, and attempt to merge the tech world with the non-profit sector. The Refugee Centre has received several recognitions for its innovative approach to serving refugees and asylum seekers in Canada. The Refugee Centre has received praise from the High Commissioner of the UNHCR for its work and the Canadian government for its client-first approach to resettlement. The Refugee Centre has six departments, providing direct one-on-one services to asylum seekers and refugees, reaching over 6000 in one year. Lastly, The Refugee Centre also has the only existing Refugee Full Service Legal Clinic with representation in Montreal.</p>
+      </div>
+    </div>
+    <div class="slide-num">14 / 15</div>
+  </div>
+
+  <!-- APPENDIX / CONTRIBUTORS -->
+  <div class="slide appendix">
+    <div class="slide-inner">
+      <div class="phase"><span class="n">15.0</span> Appendix — Contributors</div>
+      <div class="cbody">
+        <div>
+          <span class="role">Main Author</span>
+          <h4>Omar Yaqub, ICD.D DSL MBA BSc</h4>
+          <p>Servant of Servants with IslamicFamily. Omar serves the team at IslamicFamily, a social change organization that is disrupting systemic inequity through research &amp; beauty. He is the Historian Co-Laureate for the City of Edmonton. He has two decades of experience in the for-benefit sector. Omar has been awarded a Doctor of Sacred Letters from St Stephen's College, EMCN's RISE award for Community Leadership, and the University of Alberta's Co-op Mentorship Award. He is a settler on Treaty 6. <a href="https://twitter.com/somaryaqub">Twitter</a> · <a href="https://www.linkedin.com/in/somaryaqub/">LinkedIn</a></p>
+        </div>
+        <div>
+          <span class="role">Secondary Author</span>
+          <h4>Abdulla Daoud, MSc/M.A ASA BSc</h4>
+          <p>Executive Director of The Refugee Centre, with an academic background in mathematics, statistics, political science, international relations and cybersecurity. Abdulla Daoud leads The Refugee Centre in its various roles to help strengthen the refugee and immigrant population in Canada. Abdulla Daoud oversees the staff and the Centre's programs to maintain its efficiency and success. Coming from a refugee and migrant upbringing himself and several years of experience in social and political advocacy for the community, he works to ensure that The Refugee Centre's operations and goals are met. <a href="https://twitter.com/AbdullaDaoud">Twitter</a> · <a href="https://www.linkedin.com/in/abdulla-daoud-008121150/">LinkedIn</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">15 / 15</div>
+  </div>
+
+</div>
+
+<footer>
+  IslamicFamily · Edmonton · Treaty 6 Territory &nbsp;·&nbsp; <a href="mailto:omary@islamicfamily.ca">omary@islamicfamily.ca</a> &nbsp;·&nbsp; <a href="https://flourishing.systems">flourishing.systems</a>
+</footer>
+
+</body>
+</html>

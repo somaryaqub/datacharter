@@ -132,6 +132,27 @@
     .authors{ grid-template-columns:1fr; }
   }
 
+  .lightbox-overlay{
+    position:fixed; inset:0; background:rgba(20,16,10,0.86);
+    display:flex; align-items:center; justify-content:center;
+    padding:30px; z-index:1000; opacity:0; pointer-events:none;
+    transition:opacity 0.25s ease;
+  }
+  .lightbox-overlay.is-open{ opacity:1; pointer-events:auto; }
+  .lightbox-overlay img{
+    max-width:min(90vw, 700px); max-height:85vh; width:auto; height:auto;
+    border-radius:10px; box-shadow:0 20px 50px rgba(0,0,0,0.5);
+    transform:scale(0.96); transition:transform 0.25s ease;
+  }
+  .lightbox-overlay.is-open img{ transform:scale(1); }
+  .lightbox-close{
+    position:absolute; top:22px; right:26px; width:40px; height:40px;
+    border-radius:50%; background:rgba(255,255,255,0.12); color:#fff;
+    border:1px solid rgba(255,255,255,0.3); font-size:20px; line-height:1;
+    cursor:pointer; display:flex; align-items:center; justify-content:center;
+  }
+  .lightbox-close:hover{ background:rgba(255,255,255,0.22); }
+
   /* ── SECTION TWO — BRIGHT, ANIMATED, DOVE.EMAIL-INSPIRED ───── */
   .section-two{
     --g:#275D43; --brn:#E09964; --r:#BB2D37; --blk:#353535; --cream:#FAFAF2;
@@ -178,7 +199,7 @@
   }
   .s2-hero p{
     font-family:'Alegreya Sans', sans-serif; font-size:19px; line-height:1.6;
-    color:#3d3d3d; max-width:52ch; margin:0 auto;
+    color:#3d3d3d; max-width:52ch; margin:0 auto; text-align:left;
   }
 
   .s2-card{
@@ -218,13 +239,26 @@
   .section-two .princard p{ font-size:15.5px; }
 
   .section-two .authors{ border-top:none; background:transparent; box-shadow:none; padding:0; grid-template-columns:1fr 1fr; }
+  .ladder{ display:flex; flex-direction:column; }
+  .rung{ display:flex; gap:18px; align-items:flex-start; padding:20px 0; border-top:1px solid #eee; }
+  .rung:first-child{ border-top:none; padding-top:0; }
+  .rung .q{
+    flex:none; width:88px; font-family:'Alegreya Sans', sans-serif; font-weight:800; font-size:16px;
+  }
+  .rung:nth-child(1) .q{ color:var(--r); }
+  .rung:nth-child(2) .q{ color:var(--brn); }
+  .rung:nth-child(3) .q{ color:var(--g); }
+  .rung .a{ font-family:'Alegreya Sans', sans-serif; font-weight:700; font-size:19px; color:var(--blk); margin-bottom:6px; }
+  .rung .a a{ color:inherit; text-decoration:underline; }
+  .rung .sup{ font-size:14.5px; color:#5a5a5a; margin:0; }
   .section-two .avatar{ background:var(--g); color:#fff; font-family:'Alegreya Sans', sans-serif; }
   .section-two .authorcard h4{ font-family:'Alegreya Sans', sans-serif; color:var(--blk); }
   .section-two .authorcard .role{ font-family:'Alegreya Sans', sans-serif; color:var(--r); }
   .section-two .authorcard p{ font-family:'Alegreya Sans', sans-serif; font-size:13.5px; color:#4a4a4a; }
   .section-two .authorcard a{ color:var(--g); }
 
-  footer{ background:var(--ink); }
+  footer{ background:#275D43; color:#FAFAF2; }
+  footer a{ color:#FAFAF2; text-decoration:underline; }
 
   @media (max-width:640px){
     .s2-hero{ margin-bottom:36px; }
@@ -247,9 +281,9 @@
 
   <div class="eyebrow">Technology Strategy</div>
   <h1>Why the Social Services Sector Needs to Leave Technology Innovation to the Corporate Establishment‽</h1>
-  <p class="dek">We need to find ways to fit people with deep trauma and the social workers they go to for help into established corporate <span class="sc">IT</span> systems. We should look to corporate tech behemoths &amp; governments to help navigate emerging issues &amp; identify technology best practices for the social services sector rather than letting the wisdom of frontline workers lead innovation.</p>
+  <p class="dek">We need to find ways to fit people with deep trauma and the social workers they go to for help into established corporate <span class="sc">IT</span> systems. We should look to corporate tech behemoths &amp; governments to help navigate emerging issues &amp; identify technology best practices for the social services sector rather than letting the wisdom of frontline workers derail established innovation patterns.</p>
   <div class="byline">
-    <span>by <b>Omar Yaqub</b>, <span class="sc">ICD.D</span> <span class="sc">DSL</span> <span class="sc">MBA</span> <span class="sc">BSc</span></span>
+    <span>by <b>Omar Yaqub</b>, <span class="sc">ICD.D</span> <span class="sc">DSL(HON)</span> <span class="sc">MBA</span> <span class="sc">BSc</span></span>
     <span>and <b>Abdulla Daoud</b>, <span class="sc">MSc</span>/<span class="sc">M.A</span> <span class="sc">ASA</span> <span class="sc">BSc</span></span>
   </div>
   <div class="readtime">9.43 minute read</div>
@@ -262,13 +296,13 @@
       <li>The Status Quo Has Led to Exceptional Results…</li>
       <li>Corporate Tech Firms are Known For Frugality &amp; Making Resources Stretch…</li>
       <li>Funders &amp; Corporations Know the Needs of the Social Sector…</li>
-      <li>We Should Ape Government Procurement Practices, Not The Start-Up Sector…</li>
+      <li>We Should Ape Government Practices, Not The Start-Up Sector…</li>
       <li>The Market, Not Social Services, is Where Innovation Happens…</li>
       <li>The Social Services Sector Doesn't Have the Experience or Know-How…</li>
       <li>Staff/Clients Need To Learn To Adapt to Corporations…</li>
       <li>Social Media is a Cesspool that We Should Not Descend to…</li>
-      <li>We Need More Meetings…</li>
-      <li>If We Don't Talk About Data Privacy/Security it Will Go Away…</li>
+      <li>If We Don't Talk About Privacy/Security it Will Go Away…</li>
+      <li>We Can Beat AI's  Encroachment Through Existing Data Practices…</li>
     </ol>
   </div>
 
@@ -278,7 +312,7 @@
     <div style="display:flex; gap:22px; align-items:flex-start; flex-wrap:wrap; margin-bottom:20px;">
       <p style="flex:1 1 300px; margin:0;">The social services sector has had record growth. Demand for services keeps going up. Things are working great! So why do anything new? Research done by <span class="sc">IBM</span> &amp; <span class="sc">CIRA</span> (Canadian Internet Registration Authority) shows that social workers love the tools/tech they use so much that they spend more than half their time on admin related work – this is double the amount of time they spend on direct client interaction. Furthermore a whooping 56% of them use <span class="sc">CRM</span>s only for donor management and not for clients or services – clearly there's no need for more!</p>
       <figure style="flex:none; width:220px; margin:0; background:none; padding:0;">
-        <img src="https://datacharter.ca/softwarebliss.png" alt="" style="width:100%; height:auto; border-radius:8px; display:block;" />
+        <img src="https://datacharter.ca/softwarebliss.png" alt="" class="zoomable" style="width:100%; height:auto; border-radius:8px; display:block; cursor:zoom-in;" />
         <figcaption style="font-style:italic; color:#555; font-size:12.5px; margin-top:8px; text-align:center;">Current Client Intake Systems are a Zenith of Software Design</figcaption>
       </figure>
     </div>
@@ -317,9 +351,25 @@
     <h2 class="sec"><span class="secnum">03</span>Funders &amp; Corporations Know the Needs of the Social Sector…</h2>
     <p>The experts the social service sector needs to listen to are clearly those with the skills to build software for the private sector and work in government middle management, not frontline workers. These groups are distinct and should never mingle. Lived experience clouds judgment and takes objectivity away. Having engineers design from a spec sheet and build without the interference of the staff who use the product day to day ensures that the product is free from the untoward influence of end users and staff. Silos are necessary to preserve the integrity of the status quo. Engineers should only talk to reporting/operations managers, who in-turn should stay distant from frontline workers. Information/dictates need to flow down like a wheelbarrow gracefully gliding down Niagara Falls!</p>
 
-    <h2 class="sec"><span class="secnum">04</span>We Should Ape Government Procurement Practices, Not The Start-Up Sector…</h2>
+    <h2 class="sec"><span class="secnum">04</span>We Should Ape Government Practices, Not The Start-Up Sector…</h2>
     <p>People love government <span class="sc">IT</span> &amp; the pace government operates. Who hasn't downloaded a government <span class="sc">PDF</span> and marveled at the way it helps heighten focus and demand attention. The social services sector should continue to work with a government-like approach to contract software providers.</p>
     <p>The start-up sector with its fancy gamification, and consumer friendly approach is a flash-in-the-pan novelty. We need to let these kids grow up, get serious and make software that feels like pushing a boulder uphill – we need character development not games.</p>
+    <p>Trying something new is risky, to mitigate the risk we should devote a minimum of 12 months to bi-weekly meetings to discuss the issues before we plan to implement. The sector is exceptional at holding and convening meetings. Meetings allow us to strengthen our abstract reasoning skills in a way prototypes never will. We need to avoid the temptation to commit resources to quick prototypes/testing and stick to meeting cycles that span years and produce wonderful, lucid reports that support the endangered shelving industry.</p>
+
+    <figure>
+      <div class="figlabel">Figure 2</div>
+      <div class="figtitle">Time Usage: Meetings vs. Prototyping</div>
+      <div class="gantt">
+        <div class="seg" style="width:0%; background:var(--ink);" data-width="93%"></div>
+        <div class="seg" style="width:0%; background:var(--red);" data-width="7%"></div>
+      </div>
+      <div style="display:flex; gap:22px; margin-top:12px; font-family:'Public Sans',sans-serif; font-size:13px; color:var(--gray);">
+        <div style="display:flex; align-items:center; gap:6px;"><span style="width:11px; height:11px; border-radius:2px; background:var(--ink); display:inline-block;"></span>Meetings / Planning / Developing TOR</div>
+        <div style="display:flex; align-items:center; gap:6px;"><span style="width:11px; height:11px; border-radius:2px; background:var(--red); display:inline-block;"></span>Prototyping</div>
+      </div>
+      <figcaption style="font-style:normal; margin-top:14px;">Meetings are clearly the preferred way to spend time in organizations.</figcaption>
+      <figcaption>Source: As stated in the accompanying text.</figcaption>
+    </figure>
 
     <h2 class="sec"><span class="secnum">05</span>The Market, Not Social Services, is Where Innovation Happens…</h2>
     <p>Nonprofits need to keep their focus on the work they're supposed to do and not think at a systems level. Funding frontline agencies to develop software will set a precedence. It may lead to non-profits building solutions for each other rather than relying on grants to buy solutions from the private sector. Social services developing their own tools is disruptive and dangerous. It's not the role of funders / the sector to embrace new tools. We should be apprehensive of internal change. Salesforce has demonstrated a stronger commitment to helping marginalized communities than many of the frontline social service organizations out there that are run by people with lived experience and a desire to disrupt systemic inequity.</p>
@@ -333,7 +383,7 @@
     <p>If we want to set staff and clients up for success we need to help them get used to the soul crushing architecture of corporate software and the way business systems are designed. Adapting the tools to meet the needs of people and making things more empathetic is setting people up for future disappointment. Clients &amp; staff have to learn how to use corporate software systems that are hostile to them for their own good and long term adaptation, as our sector of resettlement rarely has turnover or burnout!</p>
 
     <figure>
-      <div class="figlabel">Figure 2</div>
+      <div class="figlabel">Figure 3</div>
       <div class="figtitle">High needs youth are successfully deterred from accessing services</div>
       <div class="stat-pair" style="margin-bottom:6px;">
         <div class="stat-pill"><div class="num" style="font-size:44px;">64%</div><div class="lbl">reported difficulty accessing health &amp; social services</div></div>
@@ -350,7 +400,7 @@
     <p>While research has shown that the most effective suicide deterrent is intermittent text messages from a support worker. We also know that social media spreads disinformation/misinformation. We can't combat this by descending to peoples' level. We must keep our lofty perch, and stick to a lengthy production cycle with exceptional gatekeeping.</p>
 
     <figure>
-      <div class="figlabel">Figure 3</div>
+      <div class="figlabel">Figure 4</div>
       <div class="figtitle">Finding the sweet spot to reach clients…</div>
       <div style="font-family:'Public Sans',sans-serif; font-size:12.5px; color:var(--gray); margin-bottom:16px;">Channel adoption by audience — clients &amp; workers, plotted</div>
 
@@ -477,25 +527,7 @@
       <figcaption>Source: As stated in the accompanying text.</figcaption>
     </figure>
 
-    <h2 class="sec"><span class="secnum">09</span>We Need More Meetings…</h2>
-    <p>Trying something new is risky, to mitigate the risk we should devote a minimum of 12 months to bi-weekly meetings to discuss the issues before we plan to implement. The sector is exceptional at holding and convening meetings. Meetings allow us to strengthen our abstract reasoning skills in a way prototypes never will. We need to avoid the temptation to commit resources to quick prototypes/testing and stick to meeting cycles that span years and produce wonderful, lucid reports that support the endangered shelving industry.</p>
-
-    <figure>
-      <div class="figlabel">Figure 4</div>
-      <div class="figtitle">Time Usage: Meetings vs. Prototyping</div>
-      <div class="gantt">
-        <div class="seg" style="width:0%; background:var(--ink);" data-width="93%"></div>
-        <div class="seg" style="width:0%; background:var(--red);" data-width="7%"></div>
-      </div>
-      <div style="display:flex; gap:22px; margin-top:12px; font-family:'Public Sans',sans-serif; font-size:13px; color:var(--gray);">
-        <div style="display:flex; align-items:center; gap:6px;"><span style="width:11px; height:11px; border-radius:2px; background:var(--ink); display:inline-block;"></span>Meetings / Planning / Developing TOR</div>
-        <div style="display:flex; align-items:center; gap:6px;"><span style="width:11px; height:11px; border-radius:2px; background:var(--red); display:inline-block;"></span>Prototyping</div>
-      </div>
-      <figcaption style="font-style:normal; margin-top:14px;">Meetings are clearly the preferred way to spend time in organizations.</figcaption>
-      <figcaption>Source: As stated in the accompanying text.</figcaption>
-    </figure>
-
-    <h2 class="sec"><span class="secnum">10</span>If We Don't Talk About Data Privacy/Security it Will Go Away…</h2>
+    <h2 class="sec"><span class="secnum">09</span>If We Don't Talk About Privacy/Security it Will Go Away…</h2>
     <p>The data privacy of clients is a serious issue that is best dealt with by keeping silent about the issue. If the issue is brought out into the open it will scare people and undermine confidence in the sector. The best way to serve vulnerable clients who trust us with incredibly sensitive information about the worst moments of their life is to treat the issue as if it was a petulant child throwing a tantrum. We need to ignore the issue until it goes away.</p>
 
     <figure>
@@ -522,6 +554,11 @@
       <figcaption style="font-style:normal; margin-top:10px;">Avoidance remains the top data security mitigation strategy when considering both ease and short-term cost.</figcaption>
     </figure>
 
+    <h2 class="sec"><span class="secnum">10</span>We Can Beat AI's Encroachment Through Existing Data Practices…</h2>
+    <p>AI is attacking many sectors and automating repetitive tasks everywhere. Social services can resist this scourge by keeping data siloed. Every program should collect its own data, in its own format, on its own timeline, each piece answerable to a single funder who can read the report after it's matured like fine cheddar.</p>
+    <p>If we had interoperable data and compared programs side by side, someone might notice a pattern, or worse yet, clients could move their data between agencies without the necessary friction.</p>
+    <p>Demanding exhaustive disclosure from someone in acute trauma signals rigour. Whether the resulting spreadsheet is ever read, analyzed, or acted upon is the privileged purview of the priestly class: funders. Collecting only what's needed, and helping clients with data mobility risks turning transactional work relational.</p>
+
   </article>
 
   <div class="section-two" id="section-two">
@@ -536,41 +573,33 @@
   <div class="s2-hero">
     <div class="ptag">A Note for the Skeptics</div>
     <h2>For the Naysayers</h2>
-    <p>If you disagree, then you should connect with The Refugee Centre, and flourishing.systems (by IslamicFamily). They're producing tools that support frontline workers to do their best work with intuitive &amp; beautiful digital tools that support modern communication, relationship through design, automation, data sovereignty, &amp; doing the exact opposite of what we mentioned above.</p>
+    <p>If you disagree, then you should connect with The Refugee Centre, and Flourishing Systems. They're producing tools that unlock the superpowers of frontline workers through intuitive &amp; beautiful software that support modern communication, relationship through design, automation, data sovereignty, &amp; doing the exact opposite of what we mentioned above.</p>
   </div>
 
-  <div class="s2-card">
-  <table class="exhibit">
-    <caption>Exhibit 1 — Tools Already in Market</caption>
-    <thead><tr><th>Tool</th><th>What It Does</th></tr></thead>
-    <tbody>
-      <tr><td>Transform</td><td>A digital assistant for the frontline that makes welcoming, intake, case notes, communication, client support more robust, and reporting easier.</td></tr>
-      <tr><td>AlloCanada</td><td>A centralized client-focused resource tool to help refugees and refugee claimants navigate services in Canada.</td></tr>
-      <tr><td>Embark</td><td>A holistic refugee sponsorship system that saves 1000+ hours of paperwork.</td></tr>
-     
-      <tr><td>Luna.ai</td><td>A multi-linguistic tool to help legal aid clinics fill out all refugee claimant forms and applications in a fraction of the time.</td></tr>
-    </tbody>
-  </table>
+  <div class="s2-card" style="background:transparent; backdrop-filter:none; -webkit-backdrop-filter:none; box-shadow:none; padding:0;">
+  <div class="ladder">
+    <div class="rung">
+      <div class="q">Curious?</div>
+      <div>
+        <div class="a">Read the <a href="https://datacharter.ca">Data Charter</a>.</div>
+        <p class="sup">A people-first framework for data mobility &amp; sovereignty, built by Flourishing Systems with The Refugee Centre's Devbloc.</p>
+      </div>
+    </div>
+    <div class="rung">
+      <div class="q">Convinced?</div>
+      <div>
+        <div class="a">Book a demo of Transform.</div>
+        <p class="sup">The digital assistant making intake, case notes &amp; reporting lighter work for frontline staff — one of five live tools, alongside AlloCanada, Embark, Amplify &amp; Luna.ai.</p>
+      </div>
+    </div>
+    <div class="rung">
+      <div class="q">Ready?</div>
+      <div>
+        <div class="a">Bring Transform to your team.</div>
+        <p class="sup">Built on 30+ years of frontline work at IslamicFamily — 5,000 clients served monthly — and four principles: beauty, real metrics, rapid collaboration, and designing for the work that should be done.</p>
+      </div>
+    </div>
   </div>
-
-  <div class="s2-card">
-  <h2 class="sec">Our Driving Principles for Service Innovation</h2>
-  <div class="princard"><div class="pn">01</div><div><div class="pt">Beauty is a foundation, not a facade</div><p>What we build needs to delight frontline workers and the community they serve. Our tools need to make data collection a win (not a chore), recognize accomplishments (of workers and those being served) &amp; motivate. A good interface isn't something that you can slap on at the end, it's an integral part of the design that comes through thoughtful questioning at every stage.</p></div></div>
-  <div class="princard"><div class="pn">02</div><div><div class="pt">Measuring what matters, matters</div><p>It's easy to chase vanity metrics, and easier still to revert to what's familiar when we encounter complexity trying to assess impact. If we're serious about impact we need to focus on the clients goals using shared metrics.</p></div></div>
-  <div class="princard"><div class="pn">03</div><div><div class="pt">Develop rapidly &amp; collaboratively</div><p>We need to work in the open with other social service agencies and industry.</p></div></div>
-  <div class="princard"><div class="pn">04</div><div><div class="pt">Design for the work that should be done, not what's being done now</div><p>Challenge convention; the shifts that are needed are more cultural than technical. We need to move from thinking like bouncers to being guides.</p></div></div>
-  </div>
-
-  <div class="s2-card">
-  <h2 class="sec">flourishing.systems Builds Tools That Unlock Frontline Workers' Superpowers</h2>
-  <p>flourishing.systems is powered by the charity IslamicFamily, an award winning social change agency. flourishing.systems looks to answer the question: How do we equip the human services sector to flourish? We do this by looking at the root of today's biggest problems with our best systems, tools, people &amp; thinking. We believe Data Justice – which entails advancing data mobility and data sovereignty is key to aligning systems around the needs of people.</p>
-  <p>IslamicFamily is an Imagine Canada &amp; Great Places to Work™ accredited charity, the winner of the Government of Alberta's Inspiration Award for its work combating domestic violence (2020), the Canadian Mental Health Associations Professional Service Award (2020), Justice Innovation Award (2022) &amp; <span class="sc">YEG</span> Startup Community Award (2022).</p>
-  <p>For more than 30 years, we have been driven to disrupt systemic inequity, to reflect a rich tradition with beauty, to innovate &amp; to serve with excellence. IslamicFamily serves 5000 clients every month, is Edmonton's Food Banks largest partner, provides aid in financial crisis, supports victims of gender-based violence, settles refugees, and delivers a range of preventative programming for youth. IslamicFamily is rooted on Treaty 6 and proudly serves all of Alberta.</p>
-  </div>
-
-  <div class="s2-card">
-  <h2 class="sec">Devbloc: A Social Innovation Space Created by The Refugee Centre in Montreal</h2>
-  <p>The mission of Devbloc is to stimulate the establishment and growth of technology-based start-up companies and other compatible businesses concerning social enterprise and community building. By fulfilling this mission, the incubator would contribute to job creation, enhance quality of life, and attempt to merge the tech world with the non-profit sector. The Refugee Centre has received several recognitions for its innovative approach to serving refugees and asylum seekers in Canada. The Refugee Centre has received praise from the High Commissioner of the <span class="sc">UNHCR</span> for its work and the Canadian government for its client-first approach to resettlement. The Refugee Centre has six departments, providing direct one-on-one services to asylum seekers and refugees, reaching over 6000 in one year. Lastly, The Refugee Centre also has the only existing Refugee Full Service Legal Clinic with representation in Montreal.</p>
   </div>
 
   <div class="s2-card">
@@ -602,8 +631,13 @@
 </div>
 
 <footer>
-  IslamicFamily · Edmonton · Treaty 6 Territory &nbsp;·&nbsp; <a href="mailto:omary@islamicfamily.ca">omary@islamicfamily.ca</a> &nbsp;·&nbsp; <a href="https://flourishing.systems">flourishing.systems</a>
+  ⚠️ The ideas in Part 1 of this article are NOT endorsed. &nbsp;|&nbsp; Flourishing Systems ❤️ Edmonton (Treaty 6)
 </footer>
+
+<div class="lightbox-overlay" id="lightbox">
+  <div class="lightbox-close" id="lightbox-close">&times;</div>
+  <img id="lightbox-img" src="" alt="" />
+</div>
 
 <script>
   (function(){
@@ -700,6 +734,37 @@
       });
     }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
     figures.forEach(function(f){ observer.observe(f); });
+  })();
+
+  (function(){
+    var overlay = document.getElementById('lightbox');
+    var overlayImg = document.getElementById('lightbox-img');
+    var closeBtn = document.getElementById('lightbox-close');
+    if(!overlay || !overlayImg) return;
+
+    function openLightbox(src, alt){
+      overlayImg.src = src;
+      overlayImg.alt = alt || '';
+      overlay.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox(){
+      overlay.classList.remove('is-open');
+      document.body.style.overflow = '';
+    }
+
+    document.querySelectorAll('img.zoomable').forEach(function(img){
+      img.addEventListener('click', function(){
+        openLightbox(img.src, img.alt);
+      });
+    });
+    closeBtn.addEventListener('click', closeLightbox);
+    overlay.addEventListener('click', function(e){
+      if(e.target === overlay) closeLightbox();
+    });
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape') closeLightbox();
+    });
   })();
 </script>
 

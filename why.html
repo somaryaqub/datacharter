@@ -15,11 +15,12 @@
     --paper:#FFFFFF; --box:#F5F3EE;
   }
   *,*::before,*::after{ box-sizing:border-box; margin:0; padding:0; }
-  html{ background:#FFFFFF; }
+  html{ background:#FAFAF2; }
   body{ background:var(--paper); color:var(--ink); font-family:'Source Serif 4', Georgia, serif; font-size:18px; line-height:1.66; }
 
   @media (prefers-color-scheme: dark){
-    html, body{ background:#FFFFFF !important; color:#1A1A1A !important; }
+    html{ background:#FAFAF2 !important; }
+    body{ background:#FFFFFF !important; color:#1A1A1A !important; }
     .wrap, article, .masthead, .brief, figure, table.exhibit, .authors, .s2-card, .s2-hero{
       background-color:transparent !important;
     }
@@ -162,7 +163,7 @@
     left:50%; right:50%;
     margin-left:-50vw; margin-right:-50vw;
     margin-top:44px; margin-bottom:0;
-    padding:0 0 60px;
+    padding:0 0 16px;
     overflow:hidden;
   }
   .s2-bg{
@@ -257,8 +258,13 @@
   .section-two .authorcard p{ font-family:'Alegreya Sans', sans-serif; font-size:13.5px; color:#4a4a4a; }
   .section-two .authorcard a{ color:var(--g); }
 
-  footer{ background:#275D43; color:#FAFAF2; }
-  footer a{ color:#FAFAF2; text-decoration:underline; }
+  footer{
+    background:transparent; color:#6E6A63;
+    margin-top:0; border-top:none;
+    padding-top:32px;
+    font-family:'Alegreya Sans', sans-serif;
+  }
+  footer a{ color:#275D43; text-decoration:underline; }
 
   @media (max-width:640px){
     .s2-hero{ margin-bottom:36px; }
@@ -284,11 +290,10 @@
   <p class="dek">We need to find ways to fit people with deep trauma and the social workers they go to for help into established corporate <span class="sc">IT</span> systems. We should look to corporate tech behemoths &amp; governments to help navigate emerging issues &amp; identify technology best practices for the social services sector rather than letting the wisdom of frontline workers derail established innovation patterns.</p>
   <div class="byline">
     <span>by <b>Omar Yaqub</b>, <span class="sc">ICD.D</span> <span class="sc">DSL(HON)</span> <span class="sc">MBA</span> <span class="sc">BSc</span></span>
-    <span>and <b>Abdulla Daoud</b>, <span class="sc">MSc</span>/<span class="sc">M.A</span> <span class="sc">ASA</span> <span class="sc">BSc</span></span>
   </div>
   <div class="readtime">9.43 minute read</div>
 
-  <img src="https://datacharter.ca/filler1.png" alt="" style="width:100%; height:auto; display:block; border-radius:8px; margin-bottom:34px;" />
+  <img src="https://datacharter.ca/filler2.png" alt="" style="width:100%; height:auto; display:block; border-radius:8px; margin-bottom:34px;" />
 
   <div class="brief">
     <div class="btitle">The Argument, In Brief</div>
@@ -298,11 +303,11 @@
       <li>Funders &amp; Corporations Know the Needs of the Social Sector…</li>
       <li>We Should Ape Government Practices, Not The Start-Up Sector…</li>
       <li>The Market, Not Social Services, is Where Innovation Happens…</li>
-      <li>The Social Services Sector Doesn't Have the Experience or Know-How…</li>
+      <li>The Social Services Sector Doesn’t Have the Experience or Know-How…</li>
       <li>Staff/Clients Need To Learn To Adapt to Corporations…</li>
       <li>Social Media is a Cesspool that We Should Not Descend to…</li>
-      <li>If We Don't Talk About Privacy/Security it Will Go Away…</li>
-      <li>We Can Beat AI's  Encroachment Through Existing Data Practices…</li>
+      <li>If We Don’t Talk About Privacy/Security it Will Go Away…</li>
+      <li>We Can Beat AI’s  Encroachment Through Existing Data Practices…</li>
     </ol>
   </div>
 
@@ -310,7 +315,7 @@
 
     <h2 class="sec"><span class="secnum">01</span>The Status Quo Has Led to Exceptional Results…</h2>
     <div style="display:flex; gap:22px; align-items:flex-start; flex-wrap:wrap; margin-bottom:20px;">
-      <p style="flex:1 1 300px; margin:0;">The social services sector has had record growth. Demand for services keeps going up. Things are working great! So why do anything new? Research done by <span class="sc">IBM</span> &amp; <span class="sc">CIRA</span> (Canadian Internet Registration Authority) shows that social workers love the tools/tech they use so much that they spend more than half their time on admin related work – this is double the amount of time they spend on direct client interaction. Furthermore a whooping 56% of them use <span class="sc">CRM</span>s only for donor management and not for clients or services – clearly there's no need for more!</p>
+      <p style="flex:1 1 300px; margin:0;">The social services sector has had record growth. Demand for services keeps going up. Things are working great! Research done by <span class="sc">IBM</span> &amp; <span class="sc">CIRA</span> (Canadian Internet Registration Authority) indicates software is a high point. Social workers love the tools/tech they use so much that they spend more than half their time on admin related work; double the amount of time they spend on direct client interaction. Furthermore a whooping 56% of agenicies use <span class="sc">CRM</span>s only for donor management and not for clients or services – indicating we’re likely already hit peek tech utilization.</p>
       <figure style="flex:none; width:220px; margin:0; background:none; padding:0;">
         <img src="https://datacharter.ca/softwarebliss.png" alt="" class="zoomable" style="width:100%; height:auto; border-radius:8px; display:block; cursor:zoom-in;" />
         <figcaption style="font-style:italic; color:#555; font-size:12.5px; margin-top:8px; text-align:center;">Current Client Intake Systems are a Zenith of Software Design</figcaption>
@@ -343,18 +348,18 @@
     </figure>
 
     <h2 class="sec"><span class="secnum">02</span>Corporate Tech Firms are Known For Frugality &amp; Making Resources Stretch…</h2>
-    <p>If we want to develop something fast and cheap we should look to the corporate <span class="sc">IT</span> world. The social services sector cannot be expected to develop tools on tight budgets and with constrained resources. Software development carries a lot of costs; big corporations know how to minimize costs for the sector. Big firms are benevolent, they can provide products for basically free in our hyper capitalistic market. A great example of corporate beneficence is free/low-cost printers – these bring people into the world of self-publishing and we know the hidden costs of ink cartridges are inconsequential!</p>
+    <p>If we want to develop something fast and cheap we should look to the corporate <span class="sc">IT</span> world. The social services sector cannot be expected to develop tools on tight budgets and with constrained resources. Software development carries a lot of costs; big corporations know how to minimize costs for the sector. Big firms are benevolent, they provide products for basically free to appease our hyper socialist society. A great example of corporate beneficence is the subsidization of low-cost printers – these bring people into the world of self-publishing, the pass through ink catridge fees that follow are inconsequential.</p>
     <p>Furthermore, professionals would much rather work with other software pros rather than give back to frontline agencies that may have helped them settle in the country or supported them through difficulty.</p>
 
-    <blockquote>"Big firms are benevolent... they subsidize printers and dispense ink cartridges at inconsequential prices."</blockquote>
+    <blockquote>“Big firms are benevolent... they subsidize printers and dispense ink cartridges at inconsequential prices.”</blockquote>
 
     <h2 class="sec"><span class="secnum">03</span>Funders &amp; Corporations Know the Needs of the Social Sector…</h2>
-    <p>The experts the social service sector needs to listen to are clearly those with the skills to build software for the private sector and work in government middle management, not frontline workers. These groups are distinct and should never mingle. Lived experience clouds judgment and takes objectivity away. Having engineers design from a spec sheet and build without the interference of the staff who use the product day to day ensures that the product is free from the untoward influence of end users and staff. Silos are necessary to preserve the integrity of the status quo. Engineers should only talk to reporting/operations managers, who in-turn should stay distant from frontline workers. Information/dictates need to flow down like a wheelbarrow gracefully gliding down Niagara Falls!</p>
+    <p>The experts the social service sector needs to listen to are clearly those with the skills to build software for the private sector and work in government middle management, not frontline workers. These groups are distinct and should never mingle. Lived experience clouds judgment and takes objectivity away. Having engineers design from a spec sheet and build without the interference of the staff who use the product day to day ensures that the product is free from the untoward influence of end users and staff. Silos are necessary to preserve the integrity of the status quo. Engineers should only talk to reporting/operations managers, who in-turn should stay distant from frontline workers. Information and design direction needs to flow down like a wheelbarrow gracefully gliding down Niagara Falls!</p>
 
     <h2 class="sec"><span class="secnum">04</span>We Should Ape Government Practices, Not The Start-Up Sector…</h2>
-    <p>People love government <span class="sc">IT</span> &amp; the pace government operates. Who hasn't downloaded a government <span class="sc">PDF</span> and marveled at the way it helps heighten focus and demand attention. The social services sector should continue to work with a government-like approach to contract software providers.</p>
+    <p>People love government <span class="sc">IT</span> &amp; the pace government operates. Who hasn’t downloaded a government <span class="sc">PDF</span> and marveled at the way it helps heighten focus and demand attention. The social services sector should continue to work with a government-like approach to contract software providers.</p>
     <p>The start-up sector with its fancy gamification, and consumer friendly approach is a flash-in-the-pan novelty. We need to let these kids grow up, get serious and make software that feels like pushing a boulder uphill – we need character development not games.</p>
-    <p>Trying something new is risky, to mitigate the risk we should devote a minimum of 12 months to bi-weekly meetings to discuss the issues before we plan to implement. The sector is exceptional at holding and convening meetings. Meetings allow us to strengthen our abstract reasoning skills in a way prototypes never will. We need to avoid the temptation to commit resources to quick prototypes/testing and stick to meeting cycles that span years and produce wonderful, lucid reports that support the endangered shelving industry.</p>
+    <p>Trying something new is risky, to mitigate the risk we should devote a minimum of 12 months to bi-weekly meetings to discuss the issues before we plan to implement. The sector is exceptional at holding and convening meetings. Meetings allow us to strengthen our abstract reasoning skills in a way prototypes never will. We must keep our lofty perch, and stick to a lengthy production cycle with exceptional gatekeeping. We need to avoid the temptation to commit resources to quick prototypes/testing and stick to meeting cycles that span years and produce wonderful, lucid reports that support the endangered shelving industry.</p>
 
     <figure>
       <div class="figlabel">Figure 2</div>
@@ -372,15 +377,15 @@
     </figure>
 
     <h2 class="sec"><span class="secnum">05</span>The Market, Not Social Services, is Where Innovation Happens…</h2>
-    <p>Nonprofits need to keep their focus on the work they're supposed to do and not think at a systems level. Funding frontline agencies to develop software will set a precedence. It may lead to non-profits building solutions for each other rather than relying on grants to buy solutions from the private sector. Social services developing their own tools is disruptive and dangerous. It's not the role of funders / the sector to embrace new tools. We should be apprehensive of internal change. Salesforce has demonstrated a stronger commitment to helping marginalized communities than many of the frontline social service organizations out there that are run by people with lived experience and a desire to disrupt systemic inequity.</p>
+    <p>Nonprofits need to keep their focus on the work they’re supposed to do and not think at a systems level. Funding frontline agencies to develop software will set a precedence. It may lead to non-profits building solutions for each other rather than relying on grants to buy solutions from the private sector. Social services developing their own tools is disruptive and dangerous. It’s not the role of funders / the sector to embrace new tools. We should be apprehensive of internal change. As we all know, Salesforce has demonstrated a stronger commitment to helping marginalized communities than many of the frontline social service organizations out there. The lived experience and desire to disrupt systemic inequity common in social services deeply clouds judgement.</p>
 
-    <img src="https://datacharter.ca/filler2.png" alt="" style="width:100%; height:auto; display:block; border-radius:8px; margin:8px 0 28px;" />
+    <img src="https://datacharter.ca/filler1.png" alt="" style="width:100%; height:auto; display:block; border-radius:8px; margin:8px 0 28px;" />
 
-    <h2 class="sec"><span class="secnum">06</span>The Social Services Sector Doesn't Have the Experience or Know-How…</h2>
-    <p>We all know there aren't enough settlement practitioners with tech experience nor tech professionals interested in supporting good causes. We know most foreign-trained professionals are living their best life, and fully employed! Settlement agencies would have a difficult time finding underemployed talent who wants to make a difference and contribute back to society.</p>
+    <h2 class="sec"><span class="secnum">06</span>The Social Services Sector Doesn’t Have the Experience or Know-How…</h2>
+    <p>We all know there aren’t enough settlement practitioners with tech experience nor tech professionals interested in supporting good causes. We know most foreign-trained professionals are living their best life, and fully employed. Settlement agencies would have a difficult time finding underemployed talent who wants to make a difference and contribute back to society.</p>
 
     <h2 class="sec"><span class="secnum">07</span>Staff/Clients Need To Learn To Adapt to Corporations…</h2>
-    <p>If we want to set staff and clients up for success we need to help them get used to the soul crushing architecture of corporate software and the way business systems are designed. Adapting the tools to meet the needs of people and making things more empathetic is setting people up for future disappointment. Clients &amp; staff have to learn how to use corporate software systems that are hostile to them for their own good and long term adaptation, as our sector of resettlement rarely has turnover or burnout!</p>
+    <p>If we want to set staff and clients up for success we need to help them get used to the soul crushing architecture of corporate software and the way business systems are designed. Adapting the tools to meet the needs of people and making things more empathetic is setting people up for future disappointment. Clients &amp; staff have to learn how to use corporate software systems that are hostile to them for their own good. Long term adaptation to corporate norms is the best recipe to ease turnover and burnout.</p>
 
     <figure>
       <div class="figlabel">Figure 3</div>
@@ -392,12 +397,12 @@
         <div class="bar-track"><div class="bar-fill" style="width:0%; background:var(--red);" data-width="64%"></div></div>
       </div>
       <figcaption style="font-style:normal; margin-top:14px;">High barriers ensure only the most resilient youth engage with services, pre-qualifying them for further institutional friction.</figcaption>
-      <figcaption>Source: Barker, Kerr, Nguyen et al., "Barriers to Health and Social Services for Street-Involved Youth in a Canadian Setting," <em>Journal of Public Health Policy</em> 36 (2015): 350–363. (650 of 1,019 street-involved youth studied in Vancouver reported difficulty accessing services.)</figcaption>
+      <figcaption>Source: Barker, Kerr, Nguyen et al., “Barriers to Health and Social Services for Street-Involved Youth in a Canadian Setting,” <em>Journal of Public Health Policy</em> 36 (2015): 350–363. (650 of 1,019 street-involved youth studied in Vancouver reported difficulty accessing services.)</figcaption>
     </figure>
 
     <h2 class="sec"><span class="secnum">08</span>Social Media is a Cesspool that We Should Not Descend to…</h2>
-    <p>We know that our clients and our staff use social media a lot. More than 75% of the people we serve get the majority of their information from social media. More than half of social workers regularly communicate with clients over platforms we have no control of: whatsapp, et al. This needs to stop! Social media is a cesspool and we can't in good conscience support people using or communicating over these easily accessible channels of filth!</p>
-    <p>While research has shown that the most effective suicide deterrent is intermittent text messages from a support worker. We also know that social media spreads disinformation/misinformation. We can't combat this by descending to peoples' level. We must keep our lofty perch, and stick to a lengthy production cycle with exceptional gatekeeping.</p>
+    <p>We know that our clients and our staff use social media a great deal. More than 75% of the people we serve get the majority of their information from social media. More than half of social workers regularly communicate with clients over platforms we have no control of: whatsapp, et al. This needs to stop! Social media is a cesspool and we can’t in good conscience support people using or communicating over these easily accessible channels of filth!</p>
+    <p>While research has shown that the most effective suicide deterrent is intermittent text messages from a support worker. We also know that social media spreads disinformation/misinformation. We can’t combat this by descending to peoples’ level. </p>
 
     <figure>
       <div class="figlabel">Figure 4</div>
@@ -406,7 +411,7 @@
 
       <svg width="100%" height="300" viewBox="0 0 520 340" xmlns="http://www.w3.org/2000/svg">
         <circle cx="170" cy="190" r="135" fill="none" stroke="var(--ink)" stroke-width="2"/>
-        <circle cx="420" cy="190" r="34" fill="none" stroke="var(--gray)" stroke-width="2" stroke-dasharray="6 5"/>
+        <circle cx="420" cy="190" r="24" fill="none" stroke="var(--gray)" stroke-width="2" stroke-dasharray="6 5"/>
 
         <circle class="fill-dot" cx="242.8" cy="168.8" r="3.8" fill="#9a9a9a" data-o="0.85" style="transition-delay:0ms"/>
         <circle class="fill-dot" cx="181.0" cy="248.8" r="3.8" fill="#9a9a9a" data-o="0.85" style="transition-delay:12ms"/>
@@ -515,7 +520,7 @@
 
         <text x="170" y="20" font-family="Public Sans" font-size="13" font-weight="800" fill="var(--ink)" text-anchor="middle">SOCIAL MEDIA &amp;</text>
         <text x="170" y="34" font-family="Public Sans" font-size="13" font-weight="800" fill="var(--ink)" text-anchor="middle">DIRECT MESSAGING</text>
-        <text x="420" y="130" font-family="Public Sans" font-size="12" font-weight="800" fill="var(--gray)" text-anchor="middle">BROCHURES &amp; EMAIL</text>
+        <text x="420" y="140" font-family="Public Sans" font-size="12" font-weight="800" fill="var(--gray)" text-anchor="middle">BROCHURES</text>
       </svg>
 
       <div style="display:flex; gap:22px; margin-top:10px; font-family:'Public Sans',sans-serif; font-size:13px; color:var(--gray);">
@@ -523,11 +528,11 @@
         <div style="display:flex; align-items:center; gap:6px;"><span style="width:11px; height:11px; border-radius:50%; background:#9a9a9a; display:inline-block;"></span>Frontline Workers</div>
       </div>
 
-      <figcaption style="font-style:normal; margin-top:16px;">Brochures and email occupy a rare, uncontested space; social media remains an overcrowded market best left to competitors.</figcaption>
+      <figcaption style="font-style:normal; margin-top:16px;">Brochures occupy a rare, uncontested space; social media remains an overcrowded market best left to competitors.</figcaption>
       <figcaption>Source: As stated in the accompanying text.</figcaption>
     </figure>
 
-    <h2 class="sec"><span class="secnum">09</span>If We Don't Talk About Privacy/Security it Will Go Away…</h2>
+    <h2 class="sec"><span class="secnum">09</span>If We Don’t Talk About Privacy/Security it Will Go Away…</h2>
     <p>The data privacy of clients is a serious issue that is best dealt with by keeping silent about the issue. If the issue is brought out into the open it will scare people and undermine confidence in the sector. The best way to serve vulnerable clients who trust us with incredibly sensitive information about the worst moments of their life is to treat the issue as if it was a petulant child throwing a tantrum. We need to ignore the issue until it goes away.</p>
 
     <figure>
@@ -554,10 +559,10 @@
       <figcaption style="font-style:normal; margin-top:10px;">Avoidance remains the top data security mitigation strategy when considering both ease and short-term cost.</figcaption>
     </figure>
 
-    <h2 class="sec"><span class="secnum">10</span>We Can Beat AI's Encroachment Through Existing Data Practices…</h2>
-    <p>AI is attacking many sectors and automating repetitive tasks everywhere. Social services can resist this scourge by keeping data siloed. Every program should collect its own data, in its own format, on its own timeline, each piece answerable to a single funder who can read the report after it's matured like fine cheddar.</p>
+    <h2 class="sec"><span class="secnum">10</span>We Can Beat AI’s Encroachment Through Existing Data Practices…</h2>
+    <p>AI is attacking many sectors and automating repetitive tasks everywhere. Social services can resist this scourge by keeping data siloed. Every program should collect its own data, in its own format, on its own timeline, each piece answerable to a single funder who can read the report after it’s matured like fine cheddar.</p>
     <p>If we had interoperable data and compared programs side by side, someone might notice a pattern, or worse yet, clients could move their data between agencies without the necessary friction.</p>
-    <p>Demanding exhaustive disclosure from someone in acute trauma signals rigour. Whether the resulting spreadsheet is ever read, analyzed, or acted upon is the privileged purview of the priestly class: funders. Collecting only what's needed, and helping clients with data mobility risks turning transactional work relational.</p>
+    <p>Demanding exhaustive disclosure from someone in acute trauma signals rigour. Whether the resulting spreadsheet is ever read, analyzed, or acted upon is the privileged purview of the priestly class: funders. Collecting only what’s needed, and helping clients with data mobility risks turning transactional work relational.</p>
 
   </article>
 
@@ -573,7 +578,7 @@
   <div class="s2-hero">
     <div class="ptag">A Note for the Skeptics</div>
     <h2>For the Naysayers</h2>
-    <p>If you disagree, then you should connect with The Refugee Centre, and Flourishing Systems. They're producing tools that unlock the superpowers of frontline workers through intuitive &amp; beautiful software that support modern communication, relationship through design, automation, data sovereignty, &amp; doing the exact opposite of what we mentioned above.</p>
+    <p>If you disagree, then you should connect with Flourishing Systems. They’re producing tools that unlock the superpowers of frontline workers through intuitive &amp; beautiful software that support modern communication, relationship through design, automation, data sovereignty, &amp; doing the exact opposite of what we mentioned above.</p>
     
   </div>
 
@@ -583,57 +588,35 @@
       <div class="q">Curious?</div>
       <div>
         <div class="a">Read the <a href="https://datacharter.ca">Data Charter</a>.</div>
-        <p class="sup">A people-first framework for data mobility &amp; sovereignty, built by Flourishing Systems with The Refugee Centre's Devbloc.</p>
+        <p class="sup">A people-first framework for data mobility &amp; sovereignty, built on insights from frontline workers.</p>
       </div>
     </div>
     <div class="rung">
       <div class="q">Convinced.</div>
       <div>
         <div class="a">Book a demo of Transform.</div>
-        <p class="sup">The digital assistant making intake, case notes &amp; reporting lighter work for frontline staff — one of five live tools, alongside AlloCanada, Embark, Amplify &amp; Luna.ai.</p>
+        <p class="sup">The digital assistant making intake, case notes &amp; reporting lighter work for frontline staff.</p>
       </div>
     </div>
     <div class="rung">
       <div class="q">Ready!</div>
       <div>
         <div class="a">Bring Transform to your team.</div>
-        <p class="sup">Built on 30+ years of frontline work at IslamicFamily — 5,000 clients served monthly — and four principles: beauty, real metrics, rapid collaboration, and designing for the work that should be done.</p>
+        <p class="sup">Bring beauty, real-time metrics, meaningful collaboration, and thoughtful design to your frontline work, reporting and client experience.</p>
       </div>
     </div>
   </div>
   </div>
 
-  <div class="s2-card">
-  <div class="authors">
-    <div class="authorcard">
-      <div class="avatar">OY</div>
-      <div>
-        <span class="role">Author</span>
-        <h4>Omar Yaqub</h4>
-        <p><span class="sc">ICD.D</span> <span class="sc">DSL</span> <span class="sc">MBA</span> <span class="sc">BSc</span>. Servant of Servants with IslamicFamily; disrupting systemic inequity through research &amp; beauty. Historian Co-Laureate for the City of Edmonton. Doctor of Sacred Letters, St Stephen's College. <a href="https://twitter.com/somaryaqub">Twitter</a> · <a href="https://www.linkedin.com/in/somaryaqub/">LinkedIn</a></p>
-      </div>
-    </div>
-    <div class="authorcard">
-      <div class="avatar">AD</div>
-      <div>
-        <span class="role">Author</span>
-        <h4>Abdulla Daoud</h4>
-        <p><span class="sc">MSc</span>/<span class="sc">M.A</span> <span class="sc">ASA</span> <span class="sc">BSc</span>. Executive Director, The Refugee Centre. Background in mathematics, statistics, political science, international relations and cybersecurity. <a href="https://twitter.com/AbdullaDaoud">Twitter</a> · <a href="https://www.linkedin.com/in/abdulla-daoud-008121150/">LinkedIn</a></p>
-      </div>
-    </div>
-  </div>
-
-  </div>
+  <footer>
+    <a href="https://flourishing.systems">Flourishing Systems</a> ❤️ Edmonton (Treaty 6)
+  </footer>
 
   </div>
 
   </div>
 
 </div>
-
-<footer>
-  <a href="https://flourishing.systems">Flourishing Systems</a> ❤️ Edmonton (Treaty 6)
-</footer>
 
 <div class="lightbox-overlay" id="lightbox">
   <div class="lightbox-close" id="lightbox-close">&times;</div>
